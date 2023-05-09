@@ -66,7 +66,9 @@ export const MessageInputContainer = ({
     recognition.lang = "ja-JP";
     recognition.interimResults = true; // 認識の途中結果を返す
     recognition.continuous = false; // 発言の終了時に認識を終了する
-
+    recognition.onend = () => {
+      console.log("Speech recognition service disconnected");
+    };
     recognition.addEventListener("result", handleRecognitionResult);
     recognition.addEventListener("end", handleRecognitionEnd);
 

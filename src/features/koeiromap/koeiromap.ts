@@ -25,6 +25,6 @@ export async function synthesizeVoice(
   );
 
   const data = (await koeiroRes.json()) as any;
-
+  console.log(data);
   return { audio: data.audio };
 }

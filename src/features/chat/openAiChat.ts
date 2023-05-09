@@ -51,6 +51,7 @@ export async function getChatResponseStream(
 
   const reader = res.body?.getReader();
   if (res.status !== 200 || !reader) {
+    console.log(res);
     throw new Error("Something went wrong");
   }
 
